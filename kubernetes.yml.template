@@ -36,7 +36,7 @@ spec:
               fieldRef:
                 fieldPath: metadata.labels
       imagePullSecrets:
-        - name: wercker          
+        - name: wercker
 ---
 apiVersion: v1
 kind: Service
@@ -51,7 +51,6 @@ spec:
     targetPort: ${PORT}
   selector:
     app: twitter-feed
-    color: blue
-    commit: ${WERCKER_GIT_COMMIT}
+    color: green
   type: ClusterIP
 ---
