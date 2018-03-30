@@ -22,7 +22,7 @@ spec:
         imagePullPolicy: Always
         ports:
         - name: twitter-feed
-          containerPort: ${PORT}
+          containerPort: 8080
           protocol: TCP
         volumeMounts:
           - name: podinfo
@@ -48,10 +48,10 @@ metadata:
 spec:
   ports:
   - port: 30000
-    targetPort: ${PORT}
+    targetPort: 8080
   selector:
     app: twitter-feed
     color: blue
     commit: ${WERCKER_GIT_COMMIT}
-  type: LoadBalancer
+  type: ClusterIP
 ---
