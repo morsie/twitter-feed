@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: twitter-feed
+  name: twitter-feed-v1
   labels:
     commit: ${WERCKER_GIT_COMMIT}
 spec:
@@ -22,7 +22,7 @@ spec:
         imagePullPolicy: Always
         ports:
         - name: twitter-feed
-          containerPort: 8080
+          containerPort: ${PORT}
           protocol: TCP
         volumeMounts:
           - name: podinfo
@@ -48,7 +48,7 @@ metadata:
 spec:
   ports:
   - port: 30000
-    targetPort: 8080
+    targetPort: ${PORT}
   selector:
     app: twitter-feed
     color: blue
