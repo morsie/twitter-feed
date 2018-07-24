@@ -15,7 +15,7 @@ spec:
         app: twitter-feed
         commit: ${WERCKER_GIT_COMMIT}
         color: green
-    spec:
+    spec: 
       containers:
       - name: twitter-feed
         image: ${DOCKER_REPO}:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
