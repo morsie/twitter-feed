@@ -38,19 +38,3 @@ spec:
       imagePullSecrets:
         - name: wercker
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: twitter-feed
-  labels:
-    app: twitter-feed
-    commit: ${WERCKER_GIT_COMMIT}
-spec:
-  ports:
-  - port: 30000
-    targetPort: ${PORT}
-  selector:
-    app: twitter-feed
-    color: green
-  type: ClusterIP
----
